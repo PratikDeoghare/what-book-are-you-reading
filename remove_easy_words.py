@@ -21,14 +21,10 @@ def easy(w):
 def main():
     book = collections.defaultdict(int)
     book_filename = sys.argv[1]
-    for line in open(book_filename).readlines():
-        regex = re.compile('[%s]' % re.escape(string.punctuation))
-        line = regex.sub('', line)
-        for w in line.split():
-            w = w.strip()
-            if not easy(w) and w.upper() not in book: 
-                book[w.upper()] = 0
-                print w.upper(), 
+    for w in read_book(book_filename): 
+        if not easy(w) and  w.upper() not in book: 
+            book[w.upper()] = w
+            print w.upper(), 
 
 if __name__ == '__main__':
     main()

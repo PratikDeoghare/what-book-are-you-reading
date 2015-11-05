@@ -2,6 +2,7 @@
 
 
 import sys, re, string, collections, math
+from nltk.tokenize import RegexpTokenizer
 
 color_dict = {
         0 : 'red', 
@@ -24,6 +25,10 @@ def load_wordlist(wordlist_filename = 'wordlist.txt'):
         freq = int(freq.strip())
         wordlist[word] = freq 
     return wordlist 
+
+def read_book(filename):
+    tokenizer = RegexpTokenizer(r'\w+')
+    return tokenizer.tokenize(open(filename).read())
  
 
 def test():
