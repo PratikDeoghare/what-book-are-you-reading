@@ -1,0 +1,24 @@
+
+
+\documentclass{pracjourn} 
+\input{myheader.tex} 
+\begin{document} 
+
+
+Let $B$ be the set of books and also the random variable that takes values in the set of books.
+
+Let $X$ be the chain of words that user searched. 
+
+To calculate $p := Prob\{ B = b | X \}$. 
+
+Calculate $p$ for each book. 
+
+Assumptions:
+    1. User searches a difficult word.
+    2. Difficult word has color 0 to 4.
+    3. User memorizes the word the first time and doesn't need to look it up again. 
+
+Remove all but the first occurence of all the words in the document. Point 3 makes it an easy word after first occurance. 
+Remove all the easy words. % remove_easy_words.py 
+
+\end{document} 
